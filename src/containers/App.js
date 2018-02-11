@@ -1,49 +1,41 @@
-import React, { Component } from 'react';
-import Spinner from '../components/Spinner';
-import SearchBox from '../components/SearchBox';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Films from './Films';
+import People from './People';
+import Planets from './Planets';
+import Species from './Species';
+import Starships from './Starships';
+import Vehicles from './Vehicles';
+import Logo from './Logo';
 import './App.css';
 
-class App extends Component {
-  constructor() {
-      super();
-      this.state = {
-        apiError: false,
-        items: [],
-        searchfield: ''
-      };
-  }
+const Home = () => (
+  <div>
+    <h1>Home</h1>
+  </div>
+);
 
-  componentDidMount() {
-    fetch('https://swapi.co/api/films')
-      .then(response => response.json())
-      .then(({results}) => this.setState({ items: results, apiError: false }))
-      .catch(err => this.setState({ apiError: true }));
-  }
+const App = () => (
+  <Router>
+    <div>
+      <Logo />
+      <Link to="/">Home</Link>
+      <Link to="/films">Films</Link>
+      <Link to="/people">People</Link>
+      <Link to="/planets">Planets</Link>
+      <Link to="/species">Species</Link>
+      <Link to="/starships">Starships</Link>
+      <Link to="/vehicles">Vehicles</Link>
 
-  onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value });
-  }
-
-  render() {
-    const { apiError, items } = this.state;
-
-    return (
-      <div>
-        { apiError && <h1>Sorry, there was an error reaching the API :(</h1> }
-        { !items.length ? (
-          <div className="tc">
-            <h3>Star Wars Loading...</h3>
-            <Spinner />
-          </div>
-        ) : (
-          <div className="tc">
-            <h1 className="f1 dim yellow">Star Wars!</h1>
-            <SearchBox searchChange={ this.onSearchChange } />
-          </div>
-        ) }
-      </div>
-    );
-  }
-}
+      <Route exact path="/" component={ Home } />
+      <Route path="/films" component={ Films } />
+      <Route path="/people" component={ People } />
+      <Route path="/planets" component={ Planets } />
+      <Route path="/species" component={ Species } />
+      <Route path="/starships" component={ Starships } />
+      <Route path="/vehicles" component={ Vehicles } />
+    </div>
+  </Router>
+);
 
 export default App;
