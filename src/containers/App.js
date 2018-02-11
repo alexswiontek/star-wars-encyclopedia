@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Spinner from '../components/Spinner';
 import SearchBox from '../components/SearchBox';
 import './App.css';
 
@@ -31,11 +32,12 @@ class App extends Component {
         { apiError && <h1>Sorry, there was an error reaching the API :(</h1> }
         { !items.length ? (
           <div className="tc">
-            <h1 className="f1">Loading...</h1>
+            <h3>Star Wars Loading...</h3>
+            <Spinner />
           </div>
         ) : (
           <div className="tc">
-            <h1 className="f1">Star Wars!</h1>
+            <h1 className="f1 dim yellow">Star Wars!</h1>
             <SearchBox searchChange={ this.onSearchChange } />
           </div>
         ) }
