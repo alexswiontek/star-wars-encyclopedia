@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Back from '../components/Back';
 import Card from '../components/Card';
 import Entry from '../components/Entry';
+import SearchBox from '../components/SearchBox';
 import Spinner from '../components/Spinner';
 import ErrorMessage from '../components/ErrorMessage';
 
@@ -16,7 +17,7 @@ const PeopleList = ({ people }) => {
       </Card>
     );
   });
-  
+
   return (
     <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
       { peopleArray }
@@ -47,7 +48,11 @@ class People extends Component {
 
 
   render() {
-    const { apiError, people } = this.state;
+    const { apiError, people, searchfield } = this.state;
+
+    const filteredPeople = people.filter(person => {
+      return person.name.toLowerCase().includes(searchfield.toLowerCase());
+    });
 
     return (!people.length) ? (
       <div className="tc"><Spinner /></div>
@@ -56,7 +61,8 @@ class People extends Component {
         <Back />
         <h1>People</h1>
         { apiError && <ErrorMessage /> }
-        <PeopleList people={ people } />
+        <SearchBox searchChange={ this.onSearchChange } />
+        <PeopleList people={ filteredPeople } />
       </div>
     );
   }
