@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Back from '../components/Back';
 import Card from '../components/Card';
+import Entry from '../components/Entry';
 import Spinner from '../components/Spinner';
 import ErrorMessage from '../components/ErrorMessage';
 
@@ -24,6 +25,14 @@ class People extends Component {
   render() {
     const { apiError, people } = this.state;
 
+    const peopleArray = people.map((person, i) => {
+      return (
+        <Card key={ i } name={ person[i] && person[i].name }>
+          <Entry keyName="NAME" value="r2d2" />
+        </Card>
+      );
+    });
+
     return (!people.length) ? (
       <div className="tc"><Spinner /></div>
     ) : (
@@ -32,30 +41,7 @@ class People extends Component {
         { apiError && <ErrorMessage /> }
         <h1>People</h1>
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Card name="R2D2">
-            <ul className="tl" style={{ fontSize: '0.8em' }}>
-              <li>1: djhdhjdhj</li>
-              <li>2: dhdhdh</li>
-              <li>3: djhhjdhjd</li>
-              <li>4: dhdjhdhj</li>
-            </ul>
-          </Card>
-          <Card name="Not R2D2">
-            <ul className="tl" style={{ fontSize: '0.8em' }}>
-              <li>1: djhdhjdhj</li>
-              <li>2: dhdhdh</li>
-              <li>3: djhhjdhjd</li>
-              <li>4: dhdjhdhj</li>
-            </ul>
-          </Card>
-          <Card name="Maybe R2D2">
-            <ul className="tl" style={{ fontSize: '0.8em' }}>
-              <li>1: djhdhjdhj</li>
-              <li>2: dhdhdh</li>
-              <li>3: djhhjdhjd</li>
-              <li>4: dhdjhdhj</li>
-            </ul>
-          </Card>
+          { peopleArray }
         </div>
       </div>
     );
