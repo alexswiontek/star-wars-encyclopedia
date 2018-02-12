@@ -27,8 +27,11 @@ class People extends Component {
 
     const peopleArray = people.map((person, i) => {
       return (
-        <Card key={ i } name={ person[i] && person[i].name }>
-          <Entry keyName="NAME" value="r2d2" />
+        <Card key={ i } name={ person.name }>
+          <Entry keyName="BIRTH YEAR" value={ person.birth_year } />
+          <Entry keyName="HEIGHT" value={ (person.height * 0.0328084).toFixed(1) + ' ft' } />
+          <Entry keyName="WEIGHT" value={ Math.round(person.mass * 2.20462) + ' lbs' } />
+          <Entry keyName="GENDER" value={ person.gender } />
         </Card>
       );
     });
@@ -36,10 +39,10 @@ class People extends Component {
     return (!people.length) ? (
       <div className="tc"><Spinner /></div>
     ) : (
-      <div className="tc" style={{ maxWidth: '1000px', margin: '0 auto' }}>
+      <div className="tc" style={{ maxWidth: '900px', margin: '0 auto' }}>
         <Back />
-        { apiError && <ErrorMessage /> }
         <h1>People</h1>
+        { apiError && <ErrorMessage /> }
         <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
           { peopleArray }
         </div>
