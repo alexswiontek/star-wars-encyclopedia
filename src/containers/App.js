@@ -34,6 +34,8 @@ const App = () => (
       <Route path="/species" component={ Species } />
       <Route path="/starships" component={ Starships } />
       <Route path="/vehicles" component={ Vehicles } />
+
+
     </div>
   </Router>
 );
