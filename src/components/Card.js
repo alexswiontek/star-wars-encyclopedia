@@ -8,9 +8,9 @@ const Card = ({ children, name }) => (
       <h1 className="f4 black-80">{ name }</h1>
       <hr className="mw3 bb bw1 b--black-10" />
     </div>
-    <p className="lh-copy measure center f6 black-70">
+    <div className="lh-copy measure center f6 black-70">
       { children }
-    </p>
+    </div>
   </article>
 );
 

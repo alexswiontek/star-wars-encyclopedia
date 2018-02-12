@@ -1,6 +1,5 @@
 import React from 'react';
 import Back from '../components/Back';
-import Card from '../components/Card';
 
 const Films = () => (
   <div className="tc">
