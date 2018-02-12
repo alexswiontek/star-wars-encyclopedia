@@ -4,10 +4,11 @@ const SearchBox = ({ searchChange }) => {
   return (
     <div className="mt3 measure center pa2">
       <input
-        className="input-reset ba b--black-20 pa2 mb2 db w-100 br3"
+        className="input-reset ba b--black-20 pa2 mb2 db w-100"
         type="search"
         placeholder="Search the Star Wars Universe..."
         onChange={ searchChange }
+        style={{ fontFamily: 'DISTANT GALAXY' }}
       />
     </div>
   );

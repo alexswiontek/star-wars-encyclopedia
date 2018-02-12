@@ -7,11 +7,28 @@
 
 body {
   background: #000 url('../media/bg.jpg');
+  font-family: 'DISTANT GALAXY', Verdana, sans-serif;
   color: white;
 }
 
 #main-content {
-  font-family: 'DISTANT GALAXY', Verdana, sans-serif;
   letter-spacing: 5px;
   padding: 0 2em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.hidden > a {
+  cursor: default;
 }

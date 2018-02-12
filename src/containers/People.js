@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Back from '../components/Back';
 import Card from '../components/Card';
 import Entry from '../components/Entry';
 import SearchBox from '../components/SearchBox';
@@ -57,12 +56,13 @@ class People extends Component {
     return (!people.length) ? (
       <div className="tc"><Spinner /></div>
     ) : (
-      <div className="tc" style={{ maxWidth: '900px', margin: '0 auto' }}>
-        <Back />
-        <h1>People</h1>
-        { apiError && <ErrorMessage /> }
-        <SearchBox searchChange={ this.onSearchChange } />
-        <PeopleList people={ filteredPeople } />
+      <div>
+        { apiError ? <ErrorMessage /> : (
+          <div>
+            <SearchBox searchChange={ this.onSearchChange } />
+            <PeopleList people={ filteredPeople } />
+          </div>
+        ) }
       </div>
     );
   }

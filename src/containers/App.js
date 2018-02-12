@@ -7,6 +7,7 @@ import Species from './Species';
 import Starships from './Starships';
 import Vehicles from './Vehicles';
 import Logo from './Logo';
+import Back from '../components/Back';
 import './App.css';
 
 const Home = () => (
@@ -22,12 +23,19 @@ const Home = () => (
   </div>
 );
 
+const Header = ({ location }) => (
+  <div id="header">
+    { location.pathname !== '/' && <Back /> }
+    <h1 className="inline-flex tracked-mega">{ location.pathname.replace(/\W/, '').toUpperCase() }</h1>
+    <div className="hidden"><Back /></div>
+  </div>
+);
+
 const App = () => (
   <Router>
     <section>
-      <Link to="/">
-        <Logo />
-      </Link>
+      <Logo />
+      <Route path="/:title" component={ Header }/>
 
       <article id="main-content">
         <Route exact path="/" component={ Home } />
