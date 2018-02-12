@@ -30,9 +30,6 @@ const App = () => (
       </Link>
 
       <article id="main-content">
-        { console.log(Route) }
-
-
         <Route exact path="/" component={ Home } />
         <Route path="/films" component={ Films } />
         <Route path="/people" component={ People } />
