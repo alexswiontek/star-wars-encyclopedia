@@ -11,7 +11,14 @@ import './App.css';
 
 const Home = () => (
   <div>
-    <h1>Home</h1>
+    <ul>
+      <li><Link to="/films">Films</Link></li>
+      <li><Link to="/people">People</Link></li>
+      <li><Link to="/planets">Planets</Link></li>
+      <li><Link to="/species">Species</Link></li>
+      <li><Link to="/starships">Starships</Link></li>
+      <li><Link to="/vehicles">Vehicles</Link></li>
+    </ul>
   </div>
 );
 
@@ -23,12 +30,8 @@ const App = () => (
       </Link>
 
       <article id="main-content">
-        <Link to="/films">Films</Link>
-        <Link to="/people">People</Link>
-        <Link to="/planets">Planets</Link>
-        <Link to="/species">Species</Link>
-        <Link to="/starships">Starships</Link>
-        <Link to="/vehicles">Vehicles</Link>
+        { console.log(Route) }
+
 
         <Route exact path="/" component={ Home } />
         <Route path="/films" component={ Films } />

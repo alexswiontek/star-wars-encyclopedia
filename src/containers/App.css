@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'DISTANT GALAXY';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DISTANT GALAXY'), url('distant_galaxy.ttf') format('truetype');
+}
+
 body {
   background: #000 url('bg.jpg');
   color: white;
@@ -6,4 +13,6 @@ body {
 #main-content {
   position: absolute;
   top: 50%;
+  font-family: 'DISTANT GALAXY', Verdana, sans-serif;
+  letter-spacing: 5px;
 }
