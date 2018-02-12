@@ -11,8 +11,7 @@ body {
 }
 
 #main-content {
-  position: absolute;
-  top: 50%;
   font-family: 'DISTANT GALAXY', Verdana, sans-serif;
   letter-spacing: 5px;
+  padding: 0 2em;
 }
