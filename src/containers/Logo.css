@@ -76,6 +76,7 @@
   top: 25%;
   transform: translate(-50%, -50%);
   width: 34em;
+  font-size: 12px;
 }
 
 .byline span {

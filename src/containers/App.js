@@ -18,8 +18,9 @@ const Home = () => (
 const App = () => (
   <Router>
     <div>
-      <Logo />
-      <Link to="/">Home</Link>
+      <Link to="/">
+        <Logo />
+      </Link>
       <Link to="/films">Films</Link>
       <Link to="/people">People</Link>
       <Link to="/planets">Planets</Link>
