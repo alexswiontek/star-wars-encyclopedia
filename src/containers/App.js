@@ -17,27 +17,28 @@ const Home = () => (
 
 const App = () => (
   <Router>
-    <div>
+    <section>
       <Link to="/">
         <Logo />
       </Link>
-      <Link to="/films">Films</Link>
-      <Link to="/people">People</Link>
-      <Link to="/planets">Planets</Link>
-      <Link to="/species">Species</Link>
-      <Link to="/starships">Starships</Link>
-      <Link to="/vehicles">Vehicles</Link>
 
-      <Route exact path="/" component={ Home } />
-      <Route path="/films" component={ Films } />
-      <Route path="/people" component={ People } />
-      <Route path="/planets" component={ Planets } />
-      <Route path="/species" component={ Species } />
-      <Route path="/starships" component={ Starships } />
-      <Route path="/vehicles" component={ Vehicles } />
+      <article id="main-content">
+        <Link to="/films">Films</Link>
+        <Link to="/people">People</Link>
+        <Link to="/planets">Planets</Link>
+        <Link to="/species">Species</Link>
+        <Link to="/starships">Starships</Link>
+        <Link to="/vehicles">Vehicles</Link>
 
-
-    </div>
+        <Route exact path="/" component={ Home } />
+        <Route path="/films" component={ Films } />
+        <Route path="/people" component={ People } />
+        <Route path="/planets" component={ Planets } />
+        <Route path="/species" component={ Species } />
+        <Route path="/starships" component={ Starships } />
+        <Route path="/vehicles" component={ Vehicles } />
+      </article>
+    </section>
   </Router>
 );
 
