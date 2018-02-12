@@ -1,6 +1,6 @@
 import React from 'react';
-import star from './star.svg';
-import wars from './wars.svg';
+import star from '../media/star.svg';
+import wars from '../media/wars.svg';
 import './Logo.css';
 
 const Logo = () => (

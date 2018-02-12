@@ -2,11 +2,11 @@
   font-family: 'DISTANT GALAXY';
   font-style: normal;
   font-weight: normal;
-  src: local('DISTANT GALAXY'), url('distant_galaxy.ttf') format('truetype');
+  src: local('DISTANT GALAXY'), url('../media/distant_galaxy.ttf') format('truetype');
 }
 
 body {
-  background: #000 url('bg.jpg');
+  background: #000 url('../media/bg.jpg');
   color: white;
 }
 
