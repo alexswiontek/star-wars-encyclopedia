@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Back from '../components/Back';
 import Card from '../components/Card';
+import Spinner from '../components/Spinner';
 import ErrorMessage from '../components/ErrorMessage';
 
 class People extends Component {
@@ -21,9 +22,11 @@ class People extends Component {
   }
 
   render() {
-    const { apiError } = this.state;
+    const { apiError, people } = this.state;
 
-    return (
+    return (!people.length) ? (
+      <div className="tc"><Spinner /></div>
+    ) : (
       <div className="tc" style={{ maxWidth: '1000px', margin: '0 auto' }}>
         <Back />
         { apiError && <ErrorMessage /> }
