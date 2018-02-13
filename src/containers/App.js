@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, Redirect } from 'react-router-dom';
 import Films from './Films';
 import People from './People';
 import Planets from './Planets';
@@ -11,15 +11,13 @@ import Back from '../components/Back';
 import './App.css';
 
 const Home = () => (
-  <div>
-    <ul>
-      <li><Link to="/films">Films</Link></li>
-      <li><Link to="/people">People</Link></li>
-      <li><Link to="/planets">Planets</Link></li>
-      <li><Link to="/species">Species</Link></li>
-      <li><Link to="/starships">Starships</Link></li>
-      <li><Link to="/vehicles">Vehicles</Link></li>
-    </ul>
+  <div id="home">
+      <Link to="/films">Films</Link>
+      <Link to="/people">People</Link>
+      <Link to="/planets">Planets</Link>
+      <Link to="/species">Species</Link>
+      <Link to="/starships">Starships</Link>
+      <Link to="/vehicles">Vehicles</Link>
   </div>
 );
 
@@ -31,6 +29,15 @@ const Header = ({ location }) => (
   </div>
 );
 
+const ErrorPage = () => (
+  <div>
+    <p>Oh snap! Something bad happened. You should go home.</p>
+    <div className="flex-center">
+      <Link to="/" className="obvious">Home</Link>
+    </div>
+  </div>
+);
+
 const App = () => (
   <Router>
     <section>
@@ -38,13 +45,17 @@ const App = () => (
       <Route path="/:title" component={ Header }/>
 
       <article id="main-content">
-        <Route exact path="/" component={ Home } />
-        <Route path="/films" component={ Films } />
-        <Route path="/people" component={ People } />
-        <Route path="/planets" component={ Planets } />
-        <Route path="/species" component={ Species } />
-        <Route path="/starships" component={ Starships } />
-        <Route path="/vehicles" component={ Vehicles } />
+        <Switch>
+          <Route exact path="/" component={ Home } />
+          <Route path="/films" component={ Films } />
+          <Route path="/people" component={ People } />
+          <Route path="/planets" component={ Planets } />
+          <Route path="/species" component={ Species } />
+          <Route path="/starships" component={ Starships } />
+          <Route path="/vehicles" component={ Vehicles } />
+          <Route path="/404" component={ ErrorPage } />
+          <Redirect from="/*" to="/404" />
+        </Switch>
       </article>
     </section>
   </Router>

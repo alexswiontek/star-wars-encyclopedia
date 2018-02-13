@@ -11,6 +11,28 @@ body {
   color: white;
 }
 
+#home {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#home a {
+  border: 2px solid goldenrod;
+  color: white;
+  text-align: center;
+  padding: 2em;
+  text-decoration: none;
+  flex: 1 0 47%;
+  font-size: 1.5em;
+  margin: 0.5em;
+  transition: all .2s ease-in-out;
+}
+
+#home a:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
 #main-content {
   letter-spacing: 5px;
   padding: 0 2em;
@@ -31,4 +53,24 @@ body {
 
 .hidden > a {
   cursor: default;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.obvious {
+  padding: 2em;
+  border: 5px solid goldenrod;
+  font-size: 3em;
+  text-decoration: none;
+  transition: font-size .2s ease-in-out;
+  color: white;
+}
+
+.obvious:hover {
+  font-size: 3.5em;
+  text-decoration: underline;
 }
