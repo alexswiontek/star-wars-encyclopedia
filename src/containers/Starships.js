@@ -23,7 +23,7 @@ const StarshipsList = ({ starships }) => {
         <Entry keyName="COST" value={ starship.cost_in_credits === 'unknown' ? starship.cost_in_credits : `${Number(starship.cost_in_credits).toLocaleString('en')} units` } />
         <Entry keyName="FUEL CAPACITY" value={ starship.consumables } />
         <Entry keyName="SIZE" value={ Math.round(starship.length * 3.28084).toLocaleString('en') + ' ft' } />
-        <Entry keyName="CREW" value={ `${Number(starship.crew).toLocaleString('en')} ${starship.crew == '1' ? 'person' : 'people'}` } />
+        <Entry keyName="CREW" value={ `${Number(starship.crew).toLocaleString('en')} ${starship.crew === '1' ? 'person' : 'people'}` } />
 
       </Card>
     );

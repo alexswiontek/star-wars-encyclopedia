@@ -23,8 +23,8 @@ const VehicleList = ({ vehicles }) => {
         <Entry keyName="COST" value={ vehicle.cost_in_credits === 'unknown' ? vehicle.cost_in_credits : `${Number(vehicle.cost_in_credits).toLocaleString('en')} units` } />
         <Entry keyName="FUEL CAPACITY" value={ vehicle.consumables } />
         <Entry keyName="SIZE" value={ Math.round(vehicle.length * 3.28084).toLocaleString('en') + ' ft' } />
-        <Entry keyName="CREW" value={ `${Number(vehicle.crew).toLocaleString('en')} ${vehicle.crew == '1' ? 'person' : 'people'}` } />
-        <Entry keyName="PASSENGERS" value={ `${Number(vehicle.passengers).toLocaleString('en')} ${vehicle.passengers == '1' ? 'person' : 'people'}` } />
+        <Entry keyName="CREW" value={ `${Number(vehicle.crew).toLocaleString('en')} ${vehicle.crew === '1' ? 'person' : 'people'}` } />
+        <Entry keyName="PASSENGERS" value={ `${Number(vehicle.passengers).toLocaleString('en')} ${vehicle.passengers === '1' ? 'person' : 'people'}` } />
 
       </Card>
     );
