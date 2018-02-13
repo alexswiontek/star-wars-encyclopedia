@@ -39,7 +39,7 @@ const ErrorPage = () => (
 );
 
 const App = () => (
-  <Router>
+  <Router basename="star-wars-encyclopedia">
     <section>
       <Logo />
       <Route path="/:title" component={ Header }/>
