@@ -20,11 +20,12 @@ body {
   border: 2px solid goldenrod;
   color: white;
   text-align: center;
-  padding: 2em;
+  padding: 1.8em;
   text-decoration: none;
-  flex: 1 0 47%;
+  flex: 1 0 46%;
   font-size: 1.5em;
   margin: 0.5em;
+  border-radius: 20px;
   transition: all .2s ease-in-out;
 }
 
@@ -73,4 +74,10 @@ body {
 .obvious:hover {
   font-size: 3.5em;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  #home a {
+    font-size: 1em;
+  }
 }
