@@ -1,14 +1,14 @@
 .star {
-  animation: star 3s ease-out;
+  animation: star 5s ease-out;
 }
 .wars {
-  animation: wars 3s ease-out;
+  animation: wars 5s ease-out;
 }
 .byline span {
-  animation: spin-letters 3s linear;
+  animation: spin-letters 5s linear;
 }
 .byline {
-  animation: move-byline 3s linear;
+  animation: move-byline 5s linear;
 }
 
 /* Keyframes */

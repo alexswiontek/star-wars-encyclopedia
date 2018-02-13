@@ -6,7 +6,7 @@ import Planets from './Planets';
 import Species from './Species';
 import Starships from './Starships';
 import Vehicles from './Vehicles';
-import Logo from './Logo';
+import Logo from '../components/Logo';
 import Back from '../components/Back';
 import './App.css';
 
