@@ -1,0 +1,14 @@
+.flex-movie {
+  flex: 1 0 100%;
+  margin: 0.5em;
+  border-radius: 10px;
+  background-color: goldenrod;
+}
+
+.movie-img {
+  border-radius: 10px 10px 0 0;
+}
+
+.description {
+  padding: 1em 2em;
+}
