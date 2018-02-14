@@ -1,0 +1,17 @@
+svg.w1 {
+  fill: currentColor;
+}
+
+a.back {
+  height: 40px;
+}
+
+@media screen and (max-width: 480px) {
+  a.back {
+    width: 120px;
+  }
+
+  .hidden {
+    display: none;
+  }
+}

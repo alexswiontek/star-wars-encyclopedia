@@ -24,7 +24,7 @@ const Home = () => (
 const Header = ({ location }) => (
   <div id="header">
     { location.pathname !== '/' && <Back /> }
-    <h1 className="inline-flex tracked-mega">{ location.pathname.replace(/\W/, '').toUpperCase() }</h1>
+    <h1 className="title inline-flex tracked-mega">{ location.pathname.replace(/\W/, '').toUpperCase() }</h1>
     <div className="hidden"><Back /></div>
   </div>
 );

@@ -1,0 +1,9 @@
+input.distant-galaxy {
+  font-family: 'DISTANT GALAXY', Verdana;
+}
+
+@media screen and (max-width: 480px) {
+  input.distant-galaxy {
+    font-size: 0.7em;
+  }
+}
