@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.f85f8231.css",
-  "main.css.map": "static/css/main.f85f8231.css.map",
-  "main.js": "static/js/main.6750f6a7.js",
-  "main.js.map": "static/js/main.6750f6a7.js.map",
+  "main.css": "static/css/main.ac38edfc.css",
+  "main.css.map": "static/css/main.ac38edfc.css.map",
+  "main.js": "static/js/main.68966cd6.js",
+  "main.js.map": "static/js/main.68966cd6.js.map",
   "static/media/1.jpeg": "static/media/1.e77af2ca.jpeg",
   "static/media/2.jpeg": "static/media/2.52c6c5a7.jpeg",
   "static/media/3.jpeg": "static/media/3.11588818.jpeg",
@@ -11,11 +11,11 @@
   "static/media/6.jpeg": "static/media/6.42b0848a.jpeg",
   "static/media/7.jpeg": "static/media/7.f47bcfbb.jpeg",
   "static/media/beru.png": "static/media/beru.a060a3d2.png",
-  "static/media/bg.jpg": "static/media/bg.dadb650c.jpg",
   "static/media/biggs.png": "static/media/biggs.3dec48e9.png",
   "static/media/c-3po.png": "static/media/c-3po.eefae157.png",
   "static/media/distant_galaxy.ttf": "static/media/distant_galaxy.db8e6558.ttf",
   "static/media/r2d2.png": "static/media/r2d2.0684ca33.png",
   "static/media/star.svg": "static/media/star.44d8b868.svg",
+  "static/media/stars.png": "static/media/stars.6494ab5b.png",
   "static/media/wars.svg": "static/media/wars.1210fd0f.svg"
 }
