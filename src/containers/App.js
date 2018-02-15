@@ -41,6 +41,8 @@ const ErrorPage = () => (
 const App = () => (
   <Router basename="star-wars-encyclopedia">
     <section>
+      <div className="stars"></div>
+      <div className="twinkling"></div>
       <Logo />
       <Route path="/:title" component={ Header }/>
 

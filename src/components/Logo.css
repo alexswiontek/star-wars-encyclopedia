@@ -110,7 +110,7 @@ img {
   right: -2em;
   text-align: center;
   text-transform: uppercase;
-  top: 35%;
+  top: 43%;
 }
 
 /*** Media queries for adjusting to different screen sizes ***/
@@ -121,7 +121,7 @@ img {
   }
 
   .byline {
-    top: 37%;
+    top: 45%;
   }
 }
 

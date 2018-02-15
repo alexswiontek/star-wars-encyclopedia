@@ -1,15 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  font-family: 'DISTANT GALAXY', Verdana, sans-serif;
+  height: 100%;
+}
+
+@keyframes move-twink-back {
+  from { background-position:0 0; }
+  to { background-position:-10000px 5000px; }
+}
+@-webkit-keyframes move-twink-back {
+  from { background-position:0 0; }
+  to { background-position:-10000px 5000px; }
+}
+@-moz-keyframes move-twink-back {
+  from { background-position:0 0; }
+  to { background-position:-10000px 5000px; }
+}
+@-ms-keyframes move-twink-back {
+  from { background-position:0 0; }
+  to { background-position:-10000px 5000px; }
+}
+
+.stars, .twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* float: left; */
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.stars {
+  background:#000 url('../media/stars.png') repeat top center;
+  z-index: -2;
+}
+
+.twinkling{
+  background:transparent url('../media/twinkling.png') repeat top center;
+  z-index: -1;
+  animation: move-twink-back 200s linear infinite;
+}
+
 @font-face {
   font-family: 'DISTANT GALAXY';
   font-style: normal;
   font-weight: normal;
   src: local('DISTANT GALAXY'), url('../media/distant_galaxy.ttf') format('truetype');
-}
-
-body {
-  background: #000 url('../media/bg.jpg') no-repeat center center fixed;
-  background-size: cover;
-  font-family: 'DISTANT GALAXY', Verdana, sans-serif;
-  color: white;
 }
 
 #home {
