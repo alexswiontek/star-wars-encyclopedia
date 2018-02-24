@@ -10,48 +10,24 @@ html {
 
 body {
   font-family: 'DISTANT GALAXY', Verdana, sans-serif;
+  background-color: black;
   color: white;
   height: 100%;
+  margin: 0;
 }
 
-@keyframes move-twink-back {
-  from { background-position:0 0; }
-  to { background-position:-10000px 5000px; }
-}
-@-webkit-keyframes move-twink-back {
-  from { background-position:0 0; }
-  to { background-position:-10000px 5000px; }
-}
-@-moz-keyframes move-twink-back {
-  from { background-position:0 0; }
-  to { background-position:-10000px 5000px; }
-}
-@-ms-keyframes move-twink-back {
-  from { background-position:0 0; }
-  to { background-position:-10000px 5000px; }
+canvas {
+  display: block;
+  vertical-align: bottom;
 }
 
-.stars, .twinkling {
-  position: absolute;
+.particles-js {
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  /* float: left; */
-  height: 100%;
   width: 100%;
-  display: block;
-}
-
-.stars {
-  background:#000 url('../media/stars.png') repeat top center;
+  height: 100%;
   z-index: -2;
-}
-
-.twinkling{
-  background:transparent url('../media/twinkling.png') repeat top center;
-  z-index: -1;
-  animation: move-twink-back 200s linear infinite;
 }
 
 @font-face {
