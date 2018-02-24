@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.7a5dadc3.css",
-  "main.css.map": "static/css/main.7a5dadc3.css.map",
-  "main.js": "static/js/main.1cdbb0c6.js",
-  "main.js.map": "static/js/main.1cdbb0c6.js.map",
+  "main.css": "static/css/main.d481aaf7.css",
+  "main.css.map": "static/css/main.d481aaf7.css.map",
+  "main.js": "static/js/main.e28705c9.js",
+  "main.js.map": "static/js/main.e28705c9.js.map",
   "static/media/1.jpeg": "static/media/1.e77af2ca.jpeg",
   "static/media/2.jpeg": "static/media/2.52c6c5a7.jpeg",
   "static/media/3.jpeg": "static/media/3.11588818.jpeg",
@@ -16,6 +16,5 @@
   "static/media/distant_galaxy.ttf": "static/media/distant_galaxy.db8e6558.ttf",
   "static/media/r2d2.png": "static/media/r2d2.0684ca33.png",
   "static/media/star.svg": "static/media/star.44d8b868.svg",
-  "static/media/stars.png": "static/media/stars.6494ab5b.png",
   "static/media/wars.svg": "static/media/wars.1210fd0f.svg"
 }
