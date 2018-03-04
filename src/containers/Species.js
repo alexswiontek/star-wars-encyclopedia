@@ -7,30 +7,35 @@ import ErrorMessage from '../components/ErrorMessage';
 
 import stock from '../media/stock.png';
 
-const speciesImg = (name) => {
-  switch(name) {
+const speciesImg = name => {
+  switch (name) {
     default:
       return stock;
   }
-}
+};
 
 const SpeciesList = ({ species }) => {
-  const speciesArray = species.map((type, i) => {
-    return (
-      <Card key={ i } name={ type.name } img={ speciesImg(type.name) }>
-        <Entry keyName="CLASSIFICATION" value={ type.classification } />
-        <Entry keyName="DESIGNATION" value={ type.designation } />
-        <Entry keyName="LANGUAGE" value={ type.language } />
-        <Entry keyName="AVERAGE HEIGHT" value={ `${(type.average_height * 0.0328084).toFixed(1)} ft` } />
-        <Entry keyName="AVERAGE LIFESPAN" value={ `${type.average_lifespan} years` } />
-
-      </Card>
-    );
-  });
+  const speciesArray = species.map((type, i) => (
+    <Card key={i} name={type.name} img={speciesImg(type.name)}>
+      <Entry keyName="CLASSIFICATION" value={type.classification} />
+      <Entry keyName="DESIGNATION" value={type.designation} />
+      <Entry keyName="LANGUAGE" value={type.language} />
+      <Entry
+        keyName="AVERAGE HEIGHT"
+        value={`${(type.average_height * 0.0328084).toFixed(1)} ft`}
+      />
+      <Entry
+        keyName="AVERAGE LIFESPAN"
+        value={`${type.average_lifespan} years`}
+      />
+    </Card>
+  ));
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-      { speciesArray }
+    <div
+      style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
+    >
+      {speciesArray}
     </div>
   );
 };
@@ -41,7 +46,7 @@ class Species extends Component {
     this.state = {
       apiError: false,
       species: [],
-      searchfield: ''
+      searchfield: '',
     };
   }
 
@@ -52,28 +57,31 @@ class Species extends Component {
       .catch(() => this.setState({ apiError: true }));
   }
 
-  onSearchChange = (event) => {
+  onSearchChange = event => {
     this.setState({ searchfield: event.target.value });
-  }
-
+  };
 
   render() {
     const { apiError, species, searchfield } = this.state;
 
-    const filteredSpecies = species.filter(type => {
-      return type.name.toLowerCase().includes(searchfield.toLowerCase());
-    });
+    const filteredSpecies = species.filter(type =>
+      type.name.toLowerCase().includes(searchfield.toLowerCase()),
+    );
 
-    return (!species.length) ? (
-      <div className="tc"><Spinner /></div>
+    return !species.length ? (
+      <div className="tc">
+        <Spinner />
+      </div>
     ) : (
       <div>
-        { apiError ? <ErrorMessage /> : (
+        {apiError ? (
+          <ErrorMessage />
+        ) : (
           <div>
-            <SearchBox searchChange={ this.onSearchChange } />
-            <SpeciesList species={ filteredSpecies } />
+            <SearchBox searchChange={this.onSearchChange} />
+            <SpeciesList species={filteredSpecies} />
           </div>
-        ) }
+        )}
       </div>
     );
   }

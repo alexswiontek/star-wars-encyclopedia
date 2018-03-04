@@ -7,31 +7,47 @@ import ErrorMessage from '../components/ErrorMessage';
 
 import starship from '../media/starships/starship.png';
 
-const starshipImg = (name) => {
-  switch(name) {
+const starshipImg = name => {
+  switch (name) {
     default:
       return starship;
   }
-}
+};
 
 const StarshipsList = ({ starships }) => {
-  const starshipsArray = starships.map((starship, i) => {
-    return (
-      <Card key={ i } name={ starship.name } img={ starshipImg(starship.name) }>
-        <Entry keyName="MODEL" value={ starship.model } />
-        <Entry keyName="CLASS" value={ starship.starship_class } />
-        <Entry keyName="COST" value={ starship.cost_in_credits === 'unknown' ? starship.cost_in_credits : `${Number(starship.cost_in_credits).toLocaleString('en')} units` } />
-        <Entry keyName="FUEL CAPACITY" value={ starship.consumables } />
-        <Entry keyName="SIZE" value={ Math.round(starship.length * 3.28084).toLocaleString('en') + ' ft' } />
-        <Entry keyName="CREW" value={ `${Number(starship.crew).toLocaleString('en')} ${starship.crew === '1' ? 'person' : 'people'}` } />
-
-      </Card>
-    );
-  });
+  const starshipsArray = starships.map((starship, i) => (
+    <Card key={i} name={starship.name} img={starshipImg(starship.name)}>
+      <Entry keyName="MODEL" value={starship.model} />
+      <Entry keyName="CLASS" value={starship.starship_class} />
+      <Entry
+        keyName="COST"
+        value={
+          starship.cost_in_credits === 'unknown'
+            ? starship.cost_in_credits
+            : `${Number(starship.cost_in_credits).toLocaleString('en')} units`
+        }
+      />
+      <Entry keyName="FUEL CAPACITY" value={starship.consumables} />
+      <Entry
+        keyName="SIZE"
+        value={`${Math.round(starship.length * 3.28084).toLocaleString(
+          'en',
+        )} ft`}
+      />
+      <Entry
+        keyName="CREW"
+        value={`${Number(starship.crew).toLocaleString('en')} ${
+          starship.crew === '1' ? 'person' : 'people'
+        }`}
+      />
+    </Card>
+  ));
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-      { starshipsArray }
+    <div
+      style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
+    >
+      {starshipsArray}
     </div>
   );
 };
@@ -42,7 +58,7 @@ class Starships extends Component {
     this.state = {
       apiError: false,
       starships: [],
-      searchfield: ''
+      searchfield: '',
     };
   }
 
@@ -53,28 +69,31 @@ class Starships extends Component {
       .catch(() => this.setState({ apiError: true }));
   }
 
-  onSearchChange = (event) => {
+  onSearchChange = event => {
     this.setState({ searchfield: event.target.value });
-  }
-
+  };
 
   render() {
     const { apiError, starships, searchfield } = this.state;
 
-    const filteredStarships = starships.filter(starship => {
-      return starship.name.toLowerCase().includes(searchfield.toLowerCase());
-    });
+    const filteredStarships = starships.filter(starship =>
+      starship.name.toLowerCase().includes(searchfield.toLowerCase()),
+    );
 
-    return (!starships.length) ? (
-      <div className="tc"><Spinner /></div>
+    return !starships.length ? (
+      <div className="tc">
+        <Spinner />
+      </div>
     ) : (
       <div>
-        { apiError ? <ErrorMessage /> : (
+        {apiError ? (
+          <ErrorMessage />
+        ) : (
           <div>
-            <SearchBox searchChange={ this.onSearchChange } />
-            <StarshipsList starships={ filteredStarships } />
+            <SearchBox searchChange={this.onSearchChange} />
+            <StarshipsList starships={filteredStarships} />
           </div>
-        ) }
+        )}
       </div>
     );
   }

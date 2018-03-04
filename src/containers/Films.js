@@ -13,8 +13,8 @@ import six from '../media/films/6.jpeg';
 import seven from '../media/films/7.jpeg';
 import stock from '../media/stock.png';
 
-const filmImg = (episode_id) => {
-  switch(episode_id) {
+const filmImg = episode_id => {
+  switch (episode_id) {
     case 1:
       return one;
     case 2:
@@ -32,24 +32,30 @@ const filmImg = (episode_id) => {
     default:
       return stock;
   }
-}
+};
 
 const FilmList = ({ films }) => {
-  const filmsArray = films.map((film, i) => {
-    film.formatted_title = `Episode ${film.episode_id}: ${film.title}`;
-    return (
-      <Movie
-        key={ film.episode_id }
-        description={ (film.opening_crawl).replace(/^[\r]$/, ' ').replace(/^[\n]$/, '') }
-        img={ filmImg(film.episode_id) }
-        title={ `${film.formatted_title} (${film.release_date.slice(0,4)})` }
-      />
-    );
-  }).sort((a, b) => a.key - b.key);
+  const filmsArray = films
+    .map((film, i) => {
+      film.formatted_title = `Episode ${film.episode_id}: ${film.title}`;
+      return (
+        <Movie
+          key={film.episode_id}
+          description={film.opening_crawl
+            .replace(/^[\r]$/, ' ')
+            .replace(/^[\n]$/, '')}
+          img={filmImg(film.episode_id)}
+          title={`${film.formatted_title} (${film.release_date.slice(0, 4)})`}
+        />
+      );
+    })
+    .sort((a, b) => a.key - b.key);
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-      { filmsArray }
+    <div
+      style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
+    >
+      {filmsArray}
     </div>
   );
 };
@@ -60,7 +66,7 @@ class Film extends Component {
     this.state = {
       apiError: false,
       films: [],
-      searchfield: ''
+      searchfield: '',
     };
   }
 
@@ -71,30 +77,39 @@ class Film extends Component {
       .catch(() => this.setState({ apiError: true }));
   }
 
-  onSearchChange = (event) => {
+  onSearchChange = event => {
     this.setState({ searchfield: event.target.value });
-  }
-
+  };
 
   render() {
     const { apiError, films, searchfield } = this.state;
 
-    const filteredFilms = films.filter(film => {
-      return (film.formatted_title)
-        ? film.formatted_title.toLowerCase().includes(searchfield.toLowerCase())
-        : film.title.toLowerCase().includes(searchfield.toLowerCase());
-    });
+    const filteredFilms = films.filter(
+      film =>
+        film.formatted_title
+          ? film.formatted_title
+              .toLowerCase()
+              .includes(searchfield.toLowerCase())
+          : film.title.toLowerCase().includes(searchfield.toLowerCase()),
+    );
 
-    return (!films.length) ? (
-      <div className="tc"><Spinner /></div>
+    return !films.length ? (
+      <div className="tc">
+        <Spinner />
+      </div>
     ) : (
       <div>
-        { apiError ? <ErrorMessage /> : (
+        {apiError ? (
+          <ErrorMessage />
+        ) : (
           <div>
-            <SearchBox searchChange={ this.onSearchChange } placeholder="Enter the title or episode number" />
-            <FilmList films={ filteredFilms } />
+            <SearchBox
+              searchChange={this.onSearchChange}
+              placeholder="Enter the title or episode number"
+            />
+            <FilmList films={filteredFilms} />
           </div>
-        ) }
+        )}
       </div>
     );
   }

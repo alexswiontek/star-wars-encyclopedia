@@ -17,8 +17,8 @@ import r5d4 from '../media/people/r5d4.png';
 import biggs from '../media/people/biggs.png';
 import stock from '../media/stock.png';
 
-const characterImg = (name) => {
-  switch(name) {
+const characterImg = name => {
+  switch (name) {
     case 'Luke Skywalker':
       return luke;
     case 'C-3PO':
@@ -42,23 +42,29 @@ const characterImg = (name) => {
     default:
       return stock;
   }
-}
+};
 
 const PeopleList = ({ people }) => {
-  const peopleArray = people.map((person, i) => {
-    return (
-      <Card key={ i } name={ person.name } img={ characterImg(person.name) }>
-        <Entry keyName="BIRTH YEAR" value={ person.birth_year } />
-        <Entry keyName="HEIGHT" value={ (person.height * 0.0328084).toFixed(1) + ' ft' } />
-        <Entry keyName="WEIGHT" value={ Math.round(person.mass * 2.20462) + ' lbs' } />
-        <Entry keyName="GENDER" value={ person.gender } />
-      </Card>
-    );
-  });
+  const peopleArray = people.map((person, i) => (
+    <Card key={i} name={person.name} img={characterImg(person.name)}>
+      <Entry keyName="BIRTH YEAR" value={person.birth_year} />
+      <Entry
+        keyName="HEIGHT"
+        value={`${(person.height * 0.0328084).toFixed(1)} ft`}
+      />
+      <Entry
+        keyName="WEIGHT"
+        value={`${Math.round(person.mass * 2.20462)} lbs`}
+      />
+      <Entry keyName="GENDER" value={person.gender} />
+    </Card>
+  ));
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-      { peopleArray }
+    <div
+      style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
+    >
+      {peopleArray}
     </div>
   );
 };
@@ -69,7 +75,7 @@ class People extends Component {
     this.state = {
       apiError: false,
       people: [],
-      searchfield: ''
+      searchfield: '',
     };
   }
 
@@ -80,28 +86,31 @@ class People extends Component {
       .catch(() => this.setState({ apiError: true }));
   }
 
-  onSearchChange = (event) => {
+  onSearchChange = event => {
     this.setState({ searchfield: event.target.value });
-  }
-
+  };
 
   render() {
     const { apiError, people, searchfield } = this.state;
 
-    const filteredPeople = people.filter(person => {
-      return person.name.toLowerCase().includes(searchfield.toLowerCase());
-    });
+    const filteredPeople = people.filter(person =>
+      person.name.toLowerCase().includes(searchfield.toLowerCase()),
+    );
 
-    return (!people.length) ? (
-      <div className="tc"><Spinner /></div>
+    return !people.length ? (
+      <div className="tc">
+        <Spinner />
+      </div>
     ) : (
       <div>
-        { apiError ? <ErrorMessage /> : (
+        {apiError ? (
+          <ErrorMessage />
+        ) : (
           <div>
-            <SearchBox searchChange={ this.onSearchChange } />
-            <PeopleList people={ filteredPeople } />
+            <SearchBox searchChange={this.onSearchChange} />
+            <PeopleList people={filteredPeople} />
           </div>
-        ) }
+        )}
       </div>
     );
   }

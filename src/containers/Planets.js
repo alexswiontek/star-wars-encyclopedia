@@ -7,29 +7,36 @@ import ErrorMessage from '../components/ErrorMessage';
 
 import planet from '../media/planets/planet.png';
 
-const planetImg = (name) => {
-  switch(name) {
+const planetImg = name => {
+  switch (name) {
     default:
       return planet;
   }
-}
+};
 
 const PlanetsList = ({ planets }) => {
-  const planetsArray = planets.map((planet, i) => {
-    return (
-      <Card key={ i } name={ planet.name } img={ planetImg(planet.name) }>
-        <Entry keyName="POPULATION" value={ planet.population === 'unknown' ? planet.population : Number(planet.population).toLocaleString('en') } />
-        <Entry keyName="CLIMATE" value={ planet.climate } />
-        <Entry keyName="TERRAIN" value={ planet.terrain } />
-        <Entry keyName="ORBITAL PERIOD" value={ `${planet.orbital_period} days` } />
-        <Entry keyName="SURFACE WATER" value={ `${planet.surface_water}% water` } />
-      </Card>
-    );
-  });
+  const planetsArray = planets.map((planet, i) => (
+    <Card key={i} name={planet.name} img={planetImg(planet.name)}>
+      <Entry
+        keyName="POPULATION"
+        value={
+          planet.population === 'unknown'
+            ? planet.population
+            : Number(planet.population).toLocaleString('en')
+        }
+      />
+      <Entry keyName="CLIMATE" value={planet.climate} />
+      <Entry keyName="TERRAIN" value={planet.terrain} />
+      <Entry keyName="ORBITAL PERIOD" value={`${planet.orbital_period} days`} />
+      <Entry keyName="SURFACE WATER" value={`${planet.surface_water}% water`} />
+    </Card>
+  ));
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
-      { planetsArray }
+    <div
+      style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
+    >
+      {planetsArray}
     </div>
   );
 };
@@ -40,7 +47,7 @@ class People extends Component {
     this.state = {
       apiError: false,
       planets: [],
-      searchfield: ''
+      searchfield: '',
     };
   }
 
@@ -51,28 +58,31 @@ class People extends Component {
       .catch(() => this.setState({ apiError: true }));
   }
 
-  onSearchChange = (event) => {
+  onSearchChange = event => {
     this.setState({ searchfield: event.target.value });
-  }
-
+  };
 
   render() {
     const { apiError, planets, searchfield } = this.state;
 
-    const filteredPlanets = planets.filter(planet => {
-      return planet.name.toLowerCase().includes(searchfield.toLowerCase());
-    });
+    const filteredPlanets = planets.filter(planet =>
+      planet.name.toLowerCase().includes(searchfield.toLowerCase()),
+    );
 
-    return (!planets.length) ? (
-      <div className="tc"><Spinner /></div>
+    return !planets.length ? (
+      <div className="tc">
+        <Spinner />
+      </div>
     ) : (
       <div>
-        { apiError ? <ErrorMessage /> : (
+        {apiError ? (
+          <ErrorMessage />
+        ) : (
           <div>
-            <SearchBox searchChange={ this.onSearchChange } />
-            <PlanetsList planets={ filteredPlanets } />
+            <SearchBox searchChange={this.onSearchChange} />
+            <PlanetsList planets={filteredPlanets} />
           </div>
-        ) }
+        )}
       </div>
     );
   }
