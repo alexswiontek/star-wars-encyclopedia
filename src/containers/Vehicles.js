@@ -32,7 +32,7 @@ const VehicleList = ({ vehicles }) => {
         keyName="SIZE"
         value={`${Math.round(vehicle.length * 3.28084).toLocaleString(
           'en',
-        )} ft`}
+        )} m`}
       />
       <Entry
         keyName="CREW"
