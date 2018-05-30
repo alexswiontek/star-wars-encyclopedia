@@ -3,11 +3,10 @@ import React from 'react';
 const Entry = ({ keyName, value }) => (
   <p
     style={{
-      fontFamily: 'Verdana',
-      fontWeight: 'bold',
       letterSpacing: '0.06em',
+      fontSize: '1.1em',
       textAlign: 'left',
-      paddingBottom: '5px',
+      padding: '5px',
     }}
   >
     <span>{keyName}</span>

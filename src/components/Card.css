@@ -1,0 +1,5 @@
+.flex-card {
+  flex: 1 0 48%;
+  margin: 0.5em !important;
+  border-radius: 10px;
+}
