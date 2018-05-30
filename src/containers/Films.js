@@ -45,7 +45,8 @@ const FilmList = ({ films }) => {
             .replace(/^[\r]$/, ' ')
             .replace(/^[\n]$/, '')}
           img={filmImg(film.episode_id)}
-          title={`${film.formatted_title} (${film.release_date.slice(0, 4)})`}
+          title={`${film.formatted_title}`}
+          year={`${film.release_date.slice(0, 4)}`}
         />
       );
     })
