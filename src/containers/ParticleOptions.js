@@ -1,7 +1,7 @@
 const ParticleOptions = {
   particles: {
     number: {
-      value: 160,
+      value: 20,
       density: {
         enable: true,
         value_area: 800,
