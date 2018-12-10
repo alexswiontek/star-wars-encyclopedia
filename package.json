@@ -6,11 +6,11 @@
     "classnames": "^2.2.5",
     "font-awesome": "^4.7.0",
     "primereact": "^1.5.3",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.3",
     "react-particles-js": "^2.1.0",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.4",
+    "react-scripts": "^2.1.1",
     "react-transition-group": "^2.3.1",
     "tachyons": "^4.9.1"
   },
@@ -24,6 +24,12 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
-  }
+    "gh-pages": "^2.0.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
