@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import Card from '../components/Card';
-import Entry from '../components/Entry';
-import SearchBox from '../components/SearchBox';
-import Spinner from '../components/Spinner';
-import ErrorMessage from '../components/ErrorMessage';
+import React, { Component } from "react";
+import Card from "../components/Card";
+import Entry from "../components/Entry";
+import SearchBox from "../components/SearchBox";
+import Spinner from "../components/Spinner";
+import ErrorMessage from "../components/ErrorMessage";
 
-import stock from '../media/stock.png';
+import stock from "../media/stock.png";
 
-const speciesImg = name => {
+const speciesImg = (name) => {
   switch (name) {
     default:
       return stock;
@@ -33,7 +33,7 @@ const SpeciesList = ({ species }) => {
 
   return (
     <div
-      style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
+      style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
     >
       {speciesArray}
     </div>
@@ -46,26 +46,26 @@ class Species extends Component {
     this.state = {
       apiError: false,
       species: [],
-      searchfield: '',
+      searchfield: "",
     };
   }
 
   componentDidMount() {
-    fetch('https://swapi.co/api/species/')
-      .then(response => response.json())
+    fetch("https://swapi.dev/api/species/")
+      .then((response) => response.json())
       .then(({ results }) => this.setState({ species: results }))
       .catch(() => this.setState({ apiError: true }));
   }
 
-  onSearchChange = event => {
+  onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value });
   };
 
   render() {
     const { apiError, species, searchfield } = this.state;
 
-    const filteredSpecies = species.filter(type =>
-      type.name.toLowerCase().includes(searchfield.toLowerCase()),
+    const filteredSpecies = species.filter((type) =>
+      type.name.toLowerCase().includes(searchfield.toLowerCase())
     );
 
     return !species.length ? (

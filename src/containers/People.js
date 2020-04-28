@@ -1,43 +1,43 @@
-import React, { Component } from 'react';
-import Card from '../components/Card';
-import Entry from '../components/Entry';
-import SearchBox from '../components/SearchBox';
-import Spinner from '../components/Spinner';
-import ErrorMessage from '../components/ErrorMessage';
+import React, { Component } from "react";
+import Card from "../components/Card";
+import Entry from "../components/Entry";
+import SearchBox from "../components/SearchBox";
+import Spinner from "../components/Spinner";
+import ErrorMessage from "../components/ErrorMessage";
 
-import luke from '../media/people/luke.png';
-import c3po from '../media/people/c-3po.png';
-import r2d2 from '../media/people/r2d2.png';
-import vader from '../media/people/vader.png';
-import leia from '../media/people/leia.png';
-import obiwan from '../media/people/obi-wan.png';
-import owen from '../media/people/owen.png';
-import beru from '../media/people/beru.png';
-import r5d4 from '../media/people/r5d4.png';
-import biggs from '../media/people/biggs.png';
-import stock from '../media/stock.png';
+import luke from "../media/people/luke.png";
+import c3po from "../media/people/c-3po.png";
+import r2d2 from "../media/people/r2d2.png";
+import vader from "../media/people/vader.png";
+import leia from "../media/people/leia.png";
+import obiwan from "../media/people/obi-wan.png";
+import owen from "../media/people/owen.png";
+import beru from "../media/people/beru.png";
+import r5d4 from "../media/people/r5d4.png";
+import biggs from "../media/people/biggs.png";
+import stock from "../media/stock.png";
 
-const characterImg = name => {
+const characterImg = (name) => {
   switch (name) {
-    case 'Luke Skywalker':
+    case "Luke Skywalker":
       return luke;
-    case 'C-3PO':
+    case "C-3PO":
       return c3po;
-    case 'R2-D2':
+    case "R2-D2":
       return r2d2;
-    case 'Darth Vader':
+    case "Darth Vader":
       return vader;
-    case 'Leia Organa':
+    case "Leia Organa":
       return leia;
-    case 'Obi-Wan Kenobi':
+    case "Obi-Wan Kenobi":
       return obiwan;
-    case 'Owen Lars':
+    case "Owen Lars":
       return owen;
-    case 'Beru Whitesun lars':
+    case "Beru Whitesun lars":
       return beru;
-    case 'R5-D4':
+    case "R5-D4":
       return r5d4;
-    case 'Biggs Darklighter':
+    case "Biggs Darklighter":
       return biggs;
     default:
       return stock;
@@ -62,7 +62,7 @@ const PeopleList = ({ people }) => {
 
   return (
     <div
-      style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
+      style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
     >
       {peopleArray}
     </div>
@@ -75,26 +75,26 @@ class People extends Component {
     this.state = {
       apiError: false,
       people: [],
-      searchfield: '',
+      searchfield: "",
     };
   }
 
   componentDidMount() {
-    fetch('https://swapi.co/api/people/')
-      .then(response => response.json())
+    fetch("https://swapi.dev/api/people/")
+      .then((response) => response.json())
       .then(({ results }) => this.setState({ people: results }))
       .catch(() => this.setState({ apiError: true }));
   }
 
-  onSearchChange = event => {
+  onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value });
   };
 
   render() {
     const { apiError, people, searchfield } = this.state;
 
-    const filteredPeople = people.filter(person =>
-      person.name.toLowerCase().includes(searchfield.toLowerCase()),
+    const filteredPeople = people.filter((person) =>
+      person.name.toLowerCase().includes(searchfield.toLowerCase())
     );
 
     return !people.length ? (

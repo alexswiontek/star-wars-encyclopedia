@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
-import Movie from '../components/Movie';
-import SearchBox from '../components/SearchBox';
-import Spinner from '../components/Spinner';
-import ErrorMessage from '../components/ErrorMessage';
+import React, { Component } from "react";
+import Movie from "../components/Movie";
+import SearchBox from "../components/SearchBox";
+import Spinner from "../components/Spinner";
+import ErrorMessage from "../components/ErrorMessage";
 
-import one from '../media/films/1.jpeg';
-import two from '../media/films/2.jpeg';
-import three from '../media/films/3.jpeg';
-import four from '../media/films/4.jpeg';
-import five from '../media/films/5.jpeg';
-import six from '../media/films/6.jpeg';
-import seven from '../media/films/7.jpeg';
-import stock from '../media/stock.png';
+import one from "../media/films/1.jpeg";
+import two from "../media/films/2.jpeg";
+import three from "../media/films/3.jpeg";
+import four from "../media/films/4.jpeg";
+import five from "../media/films/5.jpeg";
+import six from "../media/films/6.jpeg";
+import seven from "../media/films/7.jpeg";
+import stock from "../media/stock.png";
 
-const filmImg = episode_id => {
+const filmImg = (episode_id) => {
   switch (episode_id) {
     case 1:
       return one;
@@ -42,8 +42,8 @@ const FilmList = ({ films }) => {
         <Movie
           key={film.episode_id}
           description={film.opening_crawl
-            .replace(/^[\r]$/, ' ')
-            .replace(/^[\n]$/, '')}
+            .replace(/^[\r]$/, " ")
+            .replace(/^[\n]$/, "")}
           img={filmImg(film.episode_id)}
           title={`${film.formatted_title}`}
           year={`${film.release_date.slice(0, 4)}`}
@@ -54,7 +54,7 @@ const FilmList = ({ films }) => {
 
   return (
     <div
-      style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
+      style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
     >
       {filmsArray}
     </div>
@@ -67,31 +67,28 @@ class Film extends Component {
     this.state = {
       apiError: false,
       films: [],
-      searchfield: '',
+      searchfield: "",
     };
   }
 
   componentDidMount() {
-    fetch('https://swapi.co/api/films/')
-      .then(response => response.json())
+    fetch("https://swapi.dev/api/films/")
+      .then((response) => response.json())
       .then(({ results }) => this.setState({ films: results }))
       .catch(() => this.setState({ apiError: true }));
   }
 
-  onSearchChange = event => {
+  onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value });
   };
 
   render() {
     const { apiError, films, searchfield } = this.state;
 
-    const filteredFilms = films.filter(
-      film =>
-        film.formatted_title
-          ? film.formatted_title
-              .toLowerCase()
-              .includes(searchfield.toLowerCase())
-          : film.title.toLowerCase().includes(searchfield.toLowerCase()),
+    const filteredFilms = films.filter((film) =>
+      film.formatted_title
+        ? film.formatted_title.toLowerCase().includes(searchfield.toLowerCase())
+        : film.title.toLowerCase().includes(searchfield.toLowerCase())
     );
 
     return !films.length ? (
