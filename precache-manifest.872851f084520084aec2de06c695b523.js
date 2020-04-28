@@ -92,12 +92,12 @@ self.__precacheManifest = [
     "url": "/star-wars-encyclopedia/static/media/roboto-v15-latin-regular.7e367be0.woff2"
   },
   {
-    "revision": "38861cba61c66739c1452c3a71e39852",
-    "url": "/star-wars-encyclopedia/static/media/roboto-v15-latin-regular.38861cba.ttf"
-  },
-  {
     "revision": "16e1d930cf13fb7a956372044b6d02d0",
     "url": "/star-wars-encyclopedia/static/media/roboto-v15-latin-regular.16e1d930.woff"
+  },
+  {
+    "revision": "38861cba61c66739c1452c3a71e39852",
+    "url": "/star-wars-encyclopedia/static/media/roboto-v15-latin-regular.38861cba.ttf"
   },
   {
     "revision": "3d3a53586bd78d1069ae4b89a3b9aa98",
@@ -108,16 +108,16 @@ self.__precacheManifest = [
     "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.af7ae505.woff2"
   },
   {
-    "revision": "fee66e712a8a08eef5805a46892932ad",
-    "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.fee66e71.woff"
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.b06871f2.ttf"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.674f50d2.eot"
+    "revision": "fee66e712a8a08eef5805a46892932ad",
+    "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
