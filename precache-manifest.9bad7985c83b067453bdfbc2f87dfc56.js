@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "44d8b86851158ad281c7b4af375c082d",
-    "url": "/star-wars-encyclopedia/static/media/star.44d8b868.svg"
-  },
-  {
-    "revision": "f81cb185cb7728bd1a44",
+    "revision": "4d9fee6ba17891c194b7",
     "url": "/star-wars-encyclopedia/static/css/main.67ce684f.chunk.css"
   },
   {
-    "revision": "912ec66d7572ff821749319396470bde",
-    "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.912ec66d.svg"
+    "revision": "4d9fee6ba17891c194b7",
+    "url": "/star-wars-encyclopedia/static/js/main.4d9fee6b.chunk.js"
   },
   {
-    "revision": "9ee3bd086791e4cf89d6",
-    "url": "/star-wars-encyclopedia/static/js/1.9ee3bd08.chunk.js"
+    "revision": "73e994117a279c8227ae",
+    "url": "/star-wars-encyclopedia/static/css/1.78ddeeab.chunk.css"
+  },
+  {
+    "revision": "73e994117a279c8227ae",
+    "url": "/star-wars-encyclopedia/static/js/1.73e99411.chunk.js"
   },
   {
     "revision": "a80e1c9e0c48a6e3d596",
@@ -64,8 +64,8 @@ self.__precacheManifest = [
     "url": "/star-wars-encyclopedia/static/media/biggs.3dec48e9.png"
   },
   {
-    "revision": "f81cb185cb7728bd1a44",
-    "url": "/star-wars-encyclopedia/static/js/main.f81cb185.chunk.js"
+    "revision": "44d8b86851158ad281c7b4af375c082d",
+    "url": "/star-wars-encyclopedia/static/media/star.44d8b868.svg"
   },
   {
     "revision": "1210fd0fc7a1cab1d0659d1ee9f44a43",
@@ -92,12 +92,12 @@ self.__precacheManifest = [
     "url": "/star-wars-encyclopedia/static/media/roboto-v15-latin-regular.7e367be0.woff2"
   },
   {
-    "revision": "16e1d930cf13fb7a956372044b6d02d0",
-    "url": "/star-wars-encyclopedia/static/media/roboto-v15-latin-regular.16e1d930.woff"
-  },
-  {
     "revision": "38861cba61c66739c1452c3a71e39852",
     "url": "/star-wars-encyclopedia/static/media/roboto-v15-latin-regular.38861cba.ttf"
+  },
+  {
+    "revision": "16e1d930cf13fb7a956372044b6d02d0",
+    "url": "/star-wars-encyclopedia/static/media/roboto-v15-latin-regular.16e1d930.woff"
   },
   {
     "revision": "3d3a53586bd78d1069ae4b89a3b9aa98",
@@ -112,19 +112,19 @@ self.__precacheManifest = [
     "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.674f50d2.eot"
-  },
-  {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.b06871f2.ttf"
   },
   {
-    "revision": "9ee3bd086791e4cf89d6",
-    "url": "/star-wars-encyclopedia/static/css/1.78ddeeab.chunk.css"
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
-    "revision": "8eaeead3484eb1c00dc44a499bd99e9d",
+    "revision": "912ec66d7572ff821749319396470bde",
+    "url": "/star-wars-encyclopedia/static/media/fontawesome-webfont.912ec66d.svg"
+  },
+  {
+    "revision": "e637733bf45a93d58405029390e7d042",
     "url": "/star-wars-encyclopedia/index.html"
   }
 ];
